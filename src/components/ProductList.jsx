@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+import './ProductList.css';
+
 export default class ProductList extends Component {
   render() {
     const { propObj } = this.props;
     return (
-      <div data-testid="product">
+      <div data-testid="product" className="products-class">
         <Link to={ `/product/${propObj.id}` } data-testid="product-detail-link">
           <h3>{ propObj.title }</h3>
           <img

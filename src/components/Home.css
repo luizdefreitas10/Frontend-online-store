@@ -1,0 +1,20 @@
+.home-container-input {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+
+.input-class {
+  border-radius: 5px;
+  width: 200px;
+}
+
+.category-text-class {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.card-item {
+  display: flex;
+  flex-wrap: wrap;
+}

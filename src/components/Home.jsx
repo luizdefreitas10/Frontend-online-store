@@ -7,6 +7,8 @@ import Button from './Button';
 import Categories from './Categories';
 import ProductList from './ProductList';
 
+import './Home.css';
+
 class Home extends React.Component {
   state = { nameInput: '', objResult: [] }
 
@@ -24,33 +26,37 @@ class Home extends React.Component {
     // console.log(objResult);
     return (
       <div className="home-container">
-        <input
-          type="text"
-          data-testid="query-input"
-          value={ nameInput }
-          name="nameInput"
-          onChange={ (event) => {
-            const { value } = event.target;
-            this.setState({ nameInput: value });
-          } }
-        />
-        <button
-          type="submit"
-          data-testid="query-button"
-          onClick={ this.searchButton }
-        >
-          Pesquisar
-        </button>
-        <Link to="/cart" data-testid="shopping-cart-button"><Button /></Link>
+        <div className="home-container-input">
+          <input
+            className="input-class"
+            type="text"
+            data-testid="query-input"
+            value={ nameInput }
+            name="nameInput"
+            onChange={ (event) => {
+              const { value } = event.target;
+              this.setState({ nameInput: value });
+            } }
+          />
+          <button
+            type="submit"
+            data-testid="query-button"
+            onClick={ this.searchButton }
+          >
+            Pesquisar
+          </button>
+          <Link to="/cart" data-testid="shopping-cart-button"><Button /></Link>
+        </div>
         <p
           data-testid="home-initial-message"
+          className="category-text-class"
         >
           Digite algum termo de pesquisa ou escolha uma categoria.
         </p>
         <div>
           <Categories handleCartButton={ handleCartButton } />
         </div>
-        <div>
+        <div className="card-item">
           { objResult.map((obj) => (
             <div key={ obj.id }>
               <ProductList
